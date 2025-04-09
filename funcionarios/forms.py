@@ -34,4 +34,5 @@ class FuncionarioCadastro(forms.ModelForm):
 
         widgets = {
             'senha': forms.PasswordInput(),
+            'email': forms.EmailInput(),
         }
