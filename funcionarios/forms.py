@@ -1,24 +1,7 @@
 from django import forms
 from .models import Funcionario
 
-class FuncionarioCadastro(forms.ModelForm):
-    class Meta:
-        model = Funcionario
-        fields = ['nome', 'genero', 'funcao', 'estado', 'usuario', 'senha']
-        
-        labels = {
-            'usuario': 'Usuário',
-            'senha': 'Senha',
-            'nome': 'Nome',
-            'genero': 'Gênero',
-            'funcao': 'Função',
-            'estado': 'Estado',
-        }
-
-        widgets = {
-            'senha': forms.PasswordInput(),
-        }
-
+#Login: usuário, senha
 class FuncionarioLogin(forms.ModelForm):
     class Meta:
         model = Funcionario
@@ -27,6 +10,25 @@ class FuncionarioLogin(forms.ModelForm):
         labels = {
             'usuario': 'Usuário',
             'senha': 'Senha',
+        }
+
+        widgets = {
+            'senha': forms.PasswordInput(),
+        }
+
+#Cadastro: todos os fields para preencher
+class FuncionarioCadastro(forms.ModelForm):
+    class Meta:
+        model = Funcionario
+        fields = ['nome', 'usuario', 'genero', 'estado', 'funcao', 'senha']
+        
+        labels = {
+            'usuario': 'Usuário',
+            'senha': 'Senha',
+            'nome': 'Nome',
+            'genero': 'Gênero',
+            'funcao': 'Função',
+            'estado': 'Estado',
         }
 
         widgets = {
