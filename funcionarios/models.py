@@ -57,3 +57,7 @@ class Funcionario(models.Model):
     usuario = models.CharField(max_length=50, unique=True)
     senha = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
+
+    #Referencia para linha da tabela
+    def __str__(self) -> str:
+        return self.usuario
