@@ -50,13 +50,13 @@ class Funcionario(models.Model):
     ]
     
     #Aqui estão as colunas da tabela funcionario
-    nome = models.CharField(max_length=100)
-    genero = models.CharField(max_length=1, choices=generos)
-    funcao = models.CharField(max_length=3, choices=funcoes)
-    estado = models.CharField(max_length=2, choices=estado)
-    usuario = models.CharField(max_length=50, unique=True)
-    senha = models.CharField(max_length=100)
-    email = models.CharField(max_length=100)
+    nome = models.CharField(max_length=100, null=False, blank=False)
+    genero = models.CharField(max_length=1, choices=generos, null=True, blank=True)
+    funcao = models.CharField(max_length=3, choices=funcoes, null=True, blank=True)
+    estado = models.CharField(max_length=2, choices=estado, null=True, blank=True)
+    usuario = models.CharField(max_length=50, unique=True, null=False, blank=False)
+    senha = models.CharField(max_length=100, null=False, blank=False)
+    email = models.CharField(max_length=100, null=False, blank=False)
 
     #Referencia para linha da tabela
     def __str__(self) -> str:
