@@ -2,7 +2,7 @@ from django.db import models
 
 class Funcionario(models.Model):
 
-    #Aqui estão algumas opções para campos enumerados
+    #Aqui estão algumas opções para campos enumerados na tabela funcionario
     generos = [
         ('M', 'Masculino'),
         ('F', 'Feminino'),
@@ -55,4 +55,5 @@ class Funcionario(models.Model):
     funcao = models.CharField(max_length=3, choices=funcoes)
     estado = models.CharField(max_length=2, choices=estado)
     usuario = models.CharField(max_length=50, unique=True)
-    senha = models.CharField(max_length=128)
+    senha = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
