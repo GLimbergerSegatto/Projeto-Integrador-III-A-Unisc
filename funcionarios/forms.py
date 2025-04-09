@@ -20,11 +20,12 @@ class FuncionarioLogin(forms.ModelForm):
 class FuncionarioCadastro(forms.ModelForm):
     class Meta:
         model = Funcionario
-        fields = ['nome', 'usuario', 'genero', 'estado', 'funcao', 'senha']
+        fields = ['nome', 'usuario', 'email', 'genero', 'estado', 'funcao', 'senha']
         
         labels = {
             'usuario': 'Usuário',
             'senha': 'Senha',
+            'email': 'E-Mail',
             'nome': 'Nome',
             'genero': 'Gênero',
             'funcao': 'Função',
