@@ -1,6 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-class Funcionario(models.Model):
+class Funcionario(AbstractUser):
 
     #Aqui estão algumas opções para campos enumerados na tabela funcionario
     generos = [
@@ -54,10 +55,10 @@ class Funcionario(models.Model):
     genero = models.CharField(max_length=1, choices=generos, null=True, blank=True)
     funcao = models.CharField(max_length=3, choices=funcoes, null=True, blank=True)
     estado = models.CharField(max_length=2, choices=estado, null=True, blank=True)
-    usuario = models.CharField(max_length=50, unique=True, null=False, blank=False)
+    #usuario = models.CharField(max_length=50, unique=True, null=False, blank=False)
     senha = models.CharField(max_length=100, null=False, blank=False)
-    email = models.CharField(max_length=100, null=False, blank=False)
+    #email = models.CharField(max_length=100, null=False, blank=False)
 
     #Referencia para linha da tabela
     def __str__(self) -> str:
-        return self.usuario
+        return self.username

@@ -5,26 +5,26 @@ from .models import Funcionario
 class FuncionarioLogin(forms.ModelForm):
     class Meta:
         model = Funcionario
-        fields = ['usuario', 'senha']
+        fields = ['username', 'password']
         
         labels = {
-            'usuario': 'Usuário',
-            'senha': 'Senha',
+            'username': 'Usuário',
+            'password': 'Senha',
         }
 
         widgets = {
-            'senha': forms.PasswordInput(),
+            'password': forms.PasswordInput(),
         }
 
 #Cadastro: todos os fields para preencher
 class FuncionarioCadastro(forms.ModelForm):
     class Meta:
         model = Funcionario
-        fields = ['nome', 'usuario', 'email', 'genero', 'estado', 'funcao', 'senha']
+        fields = ['nome', 'username', 'email', 'genero', 'estado', 'funcao', 'password']
         
         labels = {
-            'usuario': 'Usuário',
-            'senha': 'Senha',
+            'username': 'Usuário',
+            'password': 'Senha',
             'email': 'E-Mail',
             'nome': 'Nome',
             'genero': 'Gênero',
@@ -33,6 +33,6 @@ class FuncionarioCadastro(forms.ModelForm):
         }
 
         widgets = {
-            'senha': forms.PasswordInput(),
+            'password': forms.PasswordInput(),
             'email': forms.EmailInput(),
         }
