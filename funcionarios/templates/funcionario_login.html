@@ -1,20 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/funcionario_login&cadastro.css' %}">
     <title>Página de Login</title>
 </head>
 <body>
-    <h1>Página de Login</h1>
-    <form action="" method="POST"> {% csrf_token %}
-        <table>
-            {{ funcio_l.as_table }}
-        </table>
-        <br>
-
-        <input type="submit" value="login">
-    </form>
-    <a href="http://127.0.0.1:8000/funcionario/funcionario_cadastro/">Não possuí uma conta?</a>
+    <body class="container">
+        <div id="top-bar">
+            <img src="{% static 'imagens/logo psytech.png' %}" alt="Logo PsyTech">
+        </div>
+        <div id="auth-box">
+            <h1>Login</h1>
+            <form action="#"  method="POST"> {% csrf_token %}
+                <label for="usuario">Usuário:</label><br>
+                <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário aqui..."><br><br>
+            
+                <label for="senha">Senha:</label><br>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha aqui..."><br><br>
+            
+                <input type="submit" value="login">
+            </form>
+            <a href="http://127.0.0.1:8000/funcionario/funcionario_cadastro/">Não possuí uma conta?</a>
+        </div>
+    </body>
 </body>
 </html>
